@@ -73,6 +73,7 @@ async function checkUpdate() {
 
         if (devices === null || devices.length === 0) {
             statusContainer.textContent = "No devices found";
+            checkingUpdate = false;
             return;
         }
 
