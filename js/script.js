@@ -134,11 +134,11 @@ async function checkUpdate() {
 }
 
 function downloadFirmware() {
-    if (downloadButton.classList.contains("disabled") && downloadButton.href !== null)
+    if (!downloadButton.classList.contains("disabled") && downloadButton.href !== null)
         downloadButton.click();
 }
 
 function openInstallationGuide() {
-    if (guideButton.classList.contains("disabled") && guideButton.href !== null)
+    if (!guideButton.classList.contains("disabled") && guideButton.href !== null)
         guideButton.click();
 }
