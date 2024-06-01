@@ -30,6 +30,9 @@
             <h2 class="text-center">Drunkdeer Firmware Downloader</h2>
             <Button id="update-btn" class="btn btn-primary update-check-btn" onclick="checkUpdate()" disabled>Check For Updates</Button>
             <p id="non-chromium-warning" class="text-center mt-3" hidden>Your browser probably does not support HID and therefore cannot check for updates</p>
+            <noscript>
+                <p class="text-center mt-3">Javascript is disabled, please enable it to use this tool</p>
+            </noscript>
         </section>
 
         <section id="post-request-content" class="d-flex hidden flex-column justify-content-center content">
