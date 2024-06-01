@@ -1,0 +1,47 @@
+  
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <!--<meta http-equiv="cache-control" content="no-cache">-->
+        <title>Drunkdeer Firmware Downloader</title>
+
+        <!--Kinda weird that you're looking here feelsweirdman-->
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="styleSheet" href="css/main.css" type="text/css">
+
+        <!-- Javascript -->
+        <script type="text/javascript" src="js/FirmwareEntry.js"></script>
+        <script type="text/javascript" src="js/DrunkdeerKeyboard.js"></script>
+        <script type="text/javascript" src="js/functions.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+    </head>
+    <body>
+        <section id="pre-request-content" class="d-flex flex-column justify-content-center content">
+            <h2 class="text-center">Drunkdeer Firmware Downloader</h2>
+            <Button id="update-btn" class="btn btn-primary update-check-btn" onclick="checkUpdate()" disabled>Check For Updates</Button>
+            <p id="non-chromium-warning" class="text-center mt-3" hidden>Your browser probably does not support HID and therefore cannot check for updates</p>
+        </section>
+
+        <section id="post-request-content" class="d-flex hidden flex-column justify-content-center content">
+
+            <h2 class="text-center">Drunkdeer Firmware Downloader</h2>
+            <section id="version" class="d-flex flex-column justify-content-center">
+                <h3 class="text-center">Device: <span id="device-name"></span></h3>
+                <h3 class="text-center">Current Firmware Version: <span id="current-version"></span></h3>
+                <h3 class="text-center">Latest Firmware Version: <span id="latest-version"></span></h3>
+                <h4 id="status" class="text-center"></h3>
+            </section>
+            <section id="buttons">
+                <Button id="update-check" class="btn btn-primary update-check-btn" onclick="checkUpdate()">Check For Updates</Button>
+                <Button id="download-btn" class="btn btn-primary update-check-btn text-center" onclick="downloadFirmware()">
+                    <a id="download-link" href="" target="_blank">Download</a>
+                </Button>
+            </section>
+
+        </section>
+    </body>
+</html>

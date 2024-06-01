@@ -1,0 +1,81 @@
+html, body {
+    background-color: #343434;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1, h2, p {
+    color: #9F9F9F;
+}
+
+h3 {
+    color: #dadada;
+}
+
+h4 {
+    color: #f3f3f3;
+}
+
+.update-check-btn {
+    background-color: rgb(42, 44, 45)!important;
+    border-color: rgb(38, 40, 41)!important;
+    border : 1px solid rgb(38, 40, 41);
+    color: #dadada;
+    box-shadow: none;
+
+    transition: transform .2s linear;
+    margin: auto;
+}
+
+.update-check-btn:hover {
+    background-color: rgb(92, 28, 19);
+    border: 1px solid rgb(92, 28, 19);
+}
+
+.update-check-btn:not(:disabled):not(.disabled):active {
+    background-color: rgb(92, 28, 19);
+    border: 1px solid rgb(92, 28, 19);
+}
+
+.update-check-btn:not(:disabled):not(.disabled):active:focus
+{
+    box-shadow: none;
+}
+
+.update-check-btn > a {
+    color: #dadada;
+    text-decoration: none;
+}
+
+.hidden {
+    display: none!important;
+}
+
+button.disabled {
+    background-color: rgb(42, 44, 45)!important;
+    border : 1px solid rgb(38, 40, 41)!important;
+
+    pointer-events: none;
+    cursor: default;
+}
+
+button.disabled > a {
+    pointer-events: none;
+    cursor: default;
+}
+
+#buttons {
+    margin: auto;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    /*padding-right: 4em;*/
+}
+
+#download-btn {
+    margin-left: 2em;
+    width: 158.740px;
+}
