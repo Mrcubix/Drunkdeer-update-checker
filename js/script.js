@@ -107,7 +107,7 @@ async function checkUpdate() {
             currentFirmwareVersionContainer.textContent = keyboard.formattedVersion();
             latestFirmwareVersionContainer.textContent = firmwareEntry.formattedVersion();
             downloadButton.href = firmwareEntry.link;
-            guideButton.href = firmwareEntry.guideLink;
+            guideButton.href = firmwareEntry.guide;
 
             // keyboard might not be ready yet
             while (keyboard.ready === false) {
