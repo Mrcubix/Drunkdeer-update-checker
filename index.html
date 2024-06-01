@@ -4,10 +4,10 @@
     <head>
         <meta charset="utf-8"/>
         <!--<meta http-equiv="cache-control" content="no-cache">-->
-        <title>Drunkdeer Firmware Downloader</title>
+        <title>Drunkdeer Firmware Update Checker</title>
 
         <!-- Discord Embed -->
-        <meta property="og:title" content="Drunkdeer Firmware Downloader">
+        <meta property="og:title" content="Drunkdeer Firmware Update Checker">
         <meta property="og:description" content="A tool to check for firmware update and download them if available.">
         <meta property="og:image" content="">
         <meta property="theme-color" content="#5C1C13">
@@ -27,7 +27,7 @@
     </head>
     <body>
         <section id="pre-request-content" class="d-flex flex-column justify-content-center content">
-            <h2 class="text-center">Drunkdeer Firmware Downloader</h2>
+            <h2 class="text-center">Drunkdeer Firmware Update Checker</h2>
             <Button id="update-btn" class="btn btn-primary update-check-btn" onclick="checkUpdate()" disabled>Check For Updates</Button>
             <p id="non-chromium-warning" class="text-center mt-3" hidden>Your browser probably does not support HID and therefore cannot check for updates</p>
             <noscript>
@@ -37,7 +37,7 @@
 
         <section id="post-request-content" class="d-flex hidden flex-column justify-content-center content">
 
-            <h2 class="text-center">Drunkdeer Firmware Downloader</h2>
+            <h2 class="text-center">Drunkdeer Firmware Update Checker</h2>
             <section id="version" class="d-flex flex-column justify-content-center">
                 <h3 class="text-center">Device: <span id="device-name"></span></h3>
                 <h3 class="text-center">Current Firmware Version: <span id="current-version"></span></h3>
