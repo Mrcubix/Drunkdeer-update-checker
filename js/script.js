@@ -47,6 +47,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     latestFirmwareVersionContainer = document.getElementById("latest-version");
     statusContainer = document.getElementById("status");
     downloadButton = document.getElementById("download-link");
+    guideButton = document.getElementById("guide-link");
+
     updateCheckButton = document.getElementById("update-btn");
 
     nonChromiumWarningContainer = document.getElementById("non-chromium-warning");
@@ -78,6 +80,10 @@ async function checkUpdate() {
         latestFirmwareVersionContainer.parentElement.classList.add("hidden");
 
         downloadButton.parentElement.classList.add("disabled");
+        downloadButton.href = null;
+
+        guideButton.parentElement.classList.add("disabled");
+        guideButton.href = null;
 
         // for now only support one device at a time
         const device = devices[0];
@@ -101,6 +107,7 @@ async function checkUpdate() {
             currentFirmwareVersionContainer.textContent = keyboard.formattedVersion();
             latestFirmwareVersionContainer.textContent = firmwareEntry.formattedVersion();
             downloadButton.href = firmwareEntry.link;
+            guideButton.href = firmwareEntry.guideLink;
 
             // keyboard might not be ready yet
             while (keyboard.ready === false) {
@@ -110,6 +117,7 @@ async function checkUpdate() {
             if (firmwareEntry.version > keyboard.firmwareVersion) {
                 statusContainer.textContent = "New firmware available";
                 downloadButton.parentElement.classList.remove("disabled");
+                guideButton.parentElement.classList.remove("disabled");
             } else if (firmwareEntry.version === keyboard.firmwareVersion) {
                 statusContainer.textContent = "Up to date";
             } else {
@@ -125,6 +133,11 @@ async function checkUpdate() {
 }
 
 function downloadFirmware() {
-    if (downloadButton.classList.contains("disabled"))
+    if (downloadButton.classList.contains("disabled") && downloadButton.href !== null)
         downloadButton.click();
+}
+
+function openInstallationGuide() {
+    if (guideButton.classList.contains("disabled") && guideButton.href !== null)
+        guideButton.click();
 }

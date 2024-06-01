@@ -40,8 +40,6 @@ async function getFirmwareEntryFor(keyboard) {
     }
 
     let link = anchor.href;
-    // "https://cdn.shopify.com/s/files/1/0671/4694/0719/files/drunkdeer_A75_us_v0017_20240511.zip?v=1715764103" for example
-    console.log(link);
 
     // get the filename from the link
     let filename = anchor.pathname.split("/").pop();
@@ -52,7 +50,12 @@ async function getFirmwareEntryFor(keyboard) {
     // convert hex version to decimal
     console.log("Latest Firmware Version: V0.0" + parseInt(version, 16));
 
-    return new FirmwareEntry(name, parseInt(version, 16), link);
+    let guideColumn = row.children[4];
+    let guideAnchor = guideColumn.querySelector("a[target='_blank']");
+
+    let guideLink = guideAnchor === null ? null : guideAnchor.href;
+
+    return new FirmwareEntry(name, parseInt(version, 16), link, guideLink);
 }
 
 // ------------------------------ Fetching Functions ------------------------------ //

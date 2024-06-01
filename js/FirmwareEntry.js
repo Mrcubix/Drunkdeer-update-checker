@@ -1,8 +1,9 @@
 class FirmwareEntry {
-    constructor(name, version, link) {
+    constructor(name, version, link, guide) {
         this.name = name;
         this.version = version;
         this.link = link;
+        this.guide = guide;
     }
 
     formattedVersion() {

@@ -55,6 +55,11 @@ h4 {
     display: none!important;
 }
 
+.invisible-vr {
+    display: inline-block;
+    width: 2em;
+}
+
 button.disabled {
     background-color: rgb(42, 44, 45)!important;
     border : 1px solid rgb(38, 40, 41)!important;
@@ -72,10 +77,16 @@ button.disabled > a {
     margin: auto;
     margin-top: 2em;
     margin-bottom: 2em;
-    /*padding-right: 4em;*/
+}
+
+#update-check {
+    margin-left: 2.5em;
 }
 
 #download-btn {
-    margin-left: 2em;
     width: 158.740px;
+}
+
+#guide-btn {
+    width: 36px;
 }
