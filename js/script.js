@@ -1,3 +1,8 @@
+/**
+ * This thing was made in a few hours so don't expect the cleanest code.
+ * The King of Jank, 2024
+ */
+
 const nameConversion = {
     "Drunkdeer A75 US": "A75 ANSI",
     "Drunkdeer A75 ISO": "A75 ISO",
