@@ -1,7 +1,7 @@
 const nameConversion = {
     "Drunkdeer A75 US": "A75 ANSI",
     "Drunkdeer A75 ISO": "A75 ISO",
-    "Drunkdeer A75 PRO": "A75 Pro",
+    "Drunkdeer A75 Pro US": "A75 Pro",
     "Drunkdeer G65": "G65",
     "Drunkdeer G60": "G60",
 }
