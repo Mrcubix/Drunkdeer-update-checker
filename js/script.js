@@ -100,6 +100,9 @@ async function checkUpdate() {
 
         if (firmwareEntry === null) {
             statusContainer.textContent = "No firmware entry found";
+            if (websiteName == null) {
+                statusContainer.textContent = "Unknown Keyboard"
+            }
         } else {
             // show the current and latest firmware versions
             currentFirmwareVersionContainer.parentElement.classList.remove("hidden");
