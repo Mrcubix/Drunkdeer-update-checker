@@ -1,7 +1,7 @@
 const nameConversion = {
     "Drunkdeer A75 US": "A75 ANSI",
     "Drunkdeer A75 ISO": "A75 ISO",
-    "Drunkdeer A75 PRO": "A75 Pro",
+    "Drunkdeer A75 Pro US": "A75 Pro",
     "Drunkdeer G65": "G65",
     "Drunkdeer G60": "G60",
 }
@@ -100,6 +100,9 @@ async function checkUpdate() {
 
         if (firmwareEntry === null) {
             statusContainer.textContent = "No firmware entry found";
+            if (websiteName == null) {
+                statusContainer.textContent = "Unknown Keyboard"
+            }
         } else {
             // show the current and latest firmware versions
             currentFirmwareVersionContainer.parentElement.classList.remove("hidden");

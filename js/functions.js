@@ -27,7 +27,10 @@ async function getFirmwareEntryFor(keyboard) {
 
     // the anchor in question is the a in the 4th column of the row with _blank target
     let row = FindDeviceRow(tables[0], keyboard.websiteName);
-
+    if (row == null) {
+        console.log("no device found")
+        return null;
+    }
     let nameColumn = row.children[0];
     let name = nameColumn.textContent.trim();
 
@@ -89,6 +92,12 @@ async function fetchFirmwareDownloadPage() {
  */
 function FindDeviceRow(table, keyboardName) {
     // table -> tbody -> trs
+
+    if(keyboardName == null) {
+        console.log("Undefined keyboard")
+        return;
+    }
+
     const rows = table.firstElementChild.children;
     let result;
     let found = false;
