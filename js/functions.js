@@ -35,7 +35,10 @@ async function getFirmwareEntryFor(keyboard) {
     let name = nameColumn.textContent.trim();
 
     let linkColumn = row.children[3];
-    let anchor = linkColumn.querySelector("a[target='_blank']");
+    // Pick the first link that has a target='_blank' & 'Download' in its innerText
+    // Website contains hidden firmware entries that should be ignored
+    let anchor = Array.from(linkColumn.querySelectorAll("a[target='_blank']"))
+                                      .filter(a => a.textContent === "Download")[0];
 
     if (anchor === null) {
         console.log("no anchor found");
