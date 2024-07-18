@@ -3,12 +3,13 @@
  * The King of Jank, 2024
  */
 
+// we could use the identification method, but that's a lot of byte checking when you could just compare to the descriptor's strings
 const nameConversion = {
     "Drunkdeer A75 US": "A75 ANSI",
     "Drunkdeer A75 ISO": "A75 ISO",
     "Drunkdeer A75 Pro US": "A75 Pro",
-    "Drunkdeer G65": "G65",
-    "Drunkdeer G60": "G60",
+    "Drunkdeer G65 US": "G65",
+    "Drunkdeer G60 US": "G60",
 }
 
 const filters = [
@@ -58,6 +59,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     nonChromiumWarningContainer = document.getElementById("non-chromium-warning");
 
+    // app only works on chromium browsers since it uses the WebHID API
     if (window.chrome === undefined) {
         nonChromiumWarningContainer.hidden = false;
     } else {
@@ -95,6 +97,13 @@ async function checkUpdate() {
         const device = devices[0];
 
         let websiteName = nameConversion[device.productName];
+
+        // unlikely to happen but just in case
+        if (websiteName === undefined) {
+            statusContainer.textContent = "Device not supported";
+            checkingUpdate = false;
+            return;
+        }
 
         const keyboard = new DrunkdeerKeyboard(device.productName, websiteName, device, null);
         await keyboard.init();
