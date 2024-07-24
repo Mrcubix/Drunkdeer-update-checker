@@ -141,6 +141,9 @@ async function checkUpdate() {
             } else {
                 statusContainer.textContent = "You are in the future (or you have an internal build)";
             }
+
+            // We don't need the keyboard anymore
+            keyboard.dispose();
         }
     }
 

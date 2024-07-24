@@ -36,6 +36,11 @@ class DrunkdeerKeyboard {
         await this.#fetchFirmwareVersion();
     }
 
+    async dispose() {
+        if (this.device.opened === true)
+            await this.device.close();
+    }
+
     // ------------------------------ Public Functions ------------------------------ //
 
     formattedVersion() {
